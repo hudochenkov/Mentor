@@ -28,7 +28,7 @@ const Container = styled.header`
     display: flex;
     align-items: center;
     padding-left: 20px;
-    
+
 `
 
 const Img = styled.img`
@@ -51,7 +51,7 @@ const Menu = styled.div`
         text-decoration: none;
     }
     a:first-child {
-       margin-left: 0px; 
+       margin-left: 0px;
     }
 
     a:hover {

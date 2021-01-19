@@ -36,7 +36,7 @@ const Container = styled.aside`
 
 const Img = styled.img`
   height: 641px;
-  width: 670px; 
+  width: 670px;
   text-align: center;
   align-items: center;
   opacity: 0.8;
@@ -66,7 +66,7 @@ const Title = styled.span`
   }
   div:nth-child(2) {
     color: #5B92E5;
-    
+
   }
   div:nth-child(3) {
     color: #000;

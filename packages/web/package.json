@@ -7,7 +7,7 @@
   "private": true,
   "homepage": ".",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack",
     "publish:now": "yarn build && now dist/"
   },

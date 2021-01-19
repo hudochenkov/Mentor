@@ -10,6 +10,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
+    watch: isDev,
     entry: isDev ? ['./src/index.tsx', 'webpack-plugin-serve/client'] : './src/index.tsx',
     mode: isDev ? 'development' : 'production',
     performance: {
