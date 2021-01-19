@@ -8,7 +8,7 @@
   "homepage": ".",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production yarn webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "publish:now": "yarn build && now dist/"
   },
   "dependencies": {
