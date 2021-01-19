@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-// const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
+const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
 
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -111,12 +111,12 @@ module.exports = {
             },
         ],
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        historyApiFallback: true,
-        hot: true,
-        port: 4000
-    },
+    // devServer: {
+    //     contentBase: path.join(__dirname, 'public'),
+    //     historyApiFallback: true,
+    //     hot: true,
+    //     port: 4000
+    // },
     output: {
         path: path.join(__dirname, 'dist'),
         filename: !isDev ? 'bundle.[contenthash].js' : 'bundle.js',
@@ -130,12 +130,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
         new webpack.NamedModulesPlugin(),
-        isDev && new ReactRefreshWebpackPlugin()
-        // isDev && new Serve({
-        //   hmr: true,
-        //   historyFallback: true,
-        //   static: [resolve(__dirname, 'dist')],
-        // })
+        // isDev && new ReactRefreshWebpackPlugin()
+        isDev && new Serve({
+          hmr: false,
+          liveReload: true,
+          historyFallback: true,
+          static: [path.resolve(__dirname, 'dist')],
+        })
 
     ].filter(Boolean),
 }
